@@ -23,8 +23,13 @@ input.onButtonPressed(Button.A, function () {
     basic.showString("Twelve Hour")
     basic.pause(5000)
     basic.showString("Half A Day")
-    basic.pause(3600000)
 })
 input.onButtonPressed(Button.B, function () {
     music.playMelody("C5 D E C B G C C ", 120)
+})
+input.onGesture(Gesture.Shake, function () {
+    music.playMelody("C5 B D C F C5 E A ", 120)
+})
+basic.forever(function () {
+    basic.showNumber(input.runningTime())
 })
